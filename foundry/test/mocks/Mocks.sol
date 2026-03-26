@@ -39,11 +39,31 @@ contract MockFailingERC20 is ERC20 {
         _mint(to, amount);
     }
 
-    function transfer(address, /*to*/ uint256 /*amount*/ ) public pure override returns (bool) {
+    function transfer(
+        address,
+        /*to*/
+        uint256 /*amount*/
+    )
+        public
+        pure
+        override
+        returns (bool)
+    {
         return false; // Always fail
     }
 
-    function transferFrom(address, /*from*/ address, /*to*/ uint256 /*amount*/ ) public pure override returns (bool) {
+    function transferFrom(
+        address,
+        /*from*/
+        address,
+        /*to*/
+        uint256 /*amount*/
+    )
+        public
+        pure
+        override
+        returns (bool)
+    {
         return false; // Always fail
     }
 }
