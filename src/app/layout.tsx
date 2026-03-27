@@ -12,27 +12,6 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout(props: { children: ReactNode }) {
- const [isCompliance , setIsCompliance] = useState(true)
-    const {address} = useAccount()
-
-useEffect(() => {
-        if(address) { checkCompliance ()}
-    },[address])
-
-
-    async function checkCompliance() {
-        if (!address) return
-        const response = await fetch("/api/compliance" , {
-            method : "POST",
-            headers : {
-                "Content-Type " : "application/json",
-            },
-            body : JSON.stringify({address})
-        })
-        const result = await response.json()
-        setIsCompliance(result.success && result.isApproved)
-    }
-
     return (
         <html lang="en">
             <head>
