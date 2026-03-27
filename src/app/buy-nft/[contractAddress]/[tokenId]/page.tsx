@@ -117,7 +117,6 @@ export default function BuyNftPage() {
             return () => clearTimeout(timer)
         }
     }, [step, isPurchaseSuccess, router])
-
     // Check if the current user is the seller
     const isSeller = seller === address
 
